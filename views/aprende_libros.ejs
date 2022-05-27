@@ -1,0 +1,29 @@
+<%-include('partials/head.ejs')%>
+
+<div class="row">
+    <div class="col-2">
+        <h1>
+            <a href="aprende" class="btn">
+                Videos
+            </a>
+        </h1>
+    </div>
+    <div class="col">
+        <h1>
+            <a href="libros" class="btn">
+                Libros
+            </a>
+        </h1>    
+    </div>
+</div>
+
+<% for(var i = 0; i < 5; i++){%>
+    <div class="row m-1 p-1" style="background-color: blue;">
+            <h1>titulo</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/p8CoR-wymQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h2>descripcion</h2>
+    </div>    
+<%}%>
+
+
+<%-include('partials/fooder.ejs')%>

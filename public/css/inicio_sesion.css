@@ -1,0 +1,38 @@
+.contenedor {
+    border:1px solid black;
+    height: 500px;
+    width: 400px;
+    padding: 1%;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.contenedor #h2_1{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.contenedor form{
+    text-align: center;
+}
+.contenedor form input {
+    width: 250px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.contenedor form label{
+    padding: 0px;
+    border: 1px solid black;
+    font-size: 24px;
+    margin-right: 10px;
+    margin-left: auto;
+}

@@ -1,0 +1,41 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.cabecera {
+    margin: 1px solid black;
+    background-color: black;
+    text-align: right;
+}
+.cabecera h1, li{
+    color: white;
+    padding: 10px;
+}
+
+.cabecera li{
+    list-style: none;
+    display: inline-block;    
+    font-size: 20px;   
+    margin-right: 15px;
+    border-radius: 15px;
+}
+.cabecera h1{
+    text-align: left;
+}
+
+.cabecera li:hover{
+    background-color: antiquewhite;
+    color: black;
+    cursor: pointer;
+}
+.pie {
+    background-color: black;
+    color: white;
+    text-align: right;
+}
+.pie a img{
+    height: 30px;
+}
+.pie footer{
+    text-align: center;
+}
