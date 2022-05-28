@@ -1,18 +1,18 @@
-<%-include('partials/head.ejs')%>
+<%-include('plantillas/head.ejs')%>
 
 <div class="row align-content-center justify-content-center vh-100">
     
     <div class="col-auto rounded p-1" style="border:1px solid black;">
         <h1 style="text-align: center;">Inicio de sesion</h1>
         <div class="col-auto rounded p-1" style="border:1px solid black;">
-            <form action="log" method="post" style="height: 400px; width: 300px;">
+            <form action="login-usuario" method="post" style="height: 400px; width: 300px;">
                 <div class="form-group m-1">
                     <label for="">usuario</label>
-                    <input type="text" class="form-control" id="user">
+                    <input type="text" class="form-control" name="user" id="user">
                  </div>
                 <div class="form-group m-1">
                     <label for="">contraseña</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" name="pass">
                 </div>
                 <center>
                     <input type="submit" class="btn btn-primary m-1" >
@@ -41,4 +41,5 @@
     </script>
 </div>
 
-<%-include('partials/fooder.ejs')%>
+
+<%-include('plantillas/fooder.ejs')%>
