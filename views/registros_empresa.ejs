@@ -1,0 +1,53 @@
+<%-include('partials/head.ejs')%>
+
+<div class="row align-content-center justify-content-center vh-100">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row" style="text-align: center;">
+                <h1>El proyecto "VCode"</h1>
+            </div>
+            <div class="row">
+                <h1 style="font-size: 34px;">¡Gracias!</h1>
+                <p style="text-align: justify;font-size: 32;">
+                VCode es una empresa de software que tiene como proposito dar su primera empleo
+                a varios jovenes egresados de la carrera de ing. en systema computacionales, por
+                esa misma razon queremos agradecer a toda empresa que se registra en nuestra plataforma,
+                porque no solo busca una empresa que pueda resolver su proyecto, tambien da la oportunidad
+                a muchos jovenes de tener esa primera vez en un proyecto.
+                </p>
+                <a href="acuerdo">Terminos, condiciones y mas</a>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="col-auto border rounded p-1">
+                <h1 style="text-align: center;">Contacto</h1>
+                    <div class="col-auto border rounded p-1">
+                        <form action="panel-usuario" style="height: 300px; width: 300px;">
+                            <div class="form-group m-1">
+                                <label for="">Nombre de la empresa</label>
+                                <input type="email" class="form-control" id="nombre">
+                             </div>
+            
+                            <div class="form-group m-1">
+                                <label for="">correo electronico</label>
+                                <input type="password" class="form-control">
+                            </div>
+                            <div class="form-group m-1">
+                                <label for="">Titutar</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <center><input type="submit" class="btn btn-primary m-1" ></center>
+                        </form>                 
+                    </div>
+        </div>
+    </div>
+    <script>
+        const us = document.getElementById('nombre');
+        us.focus();
+    </script>
+            
+    </div>
+
+</div>
+
+<%-include('partials/fooder.ejs')%>

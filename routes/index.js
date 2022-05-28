@@ -10,11 +10,8 @@ router.get('/',(req,res,next)=>{
         title:'inicio'
     })
 })
-
 router.get('/login',usuarios.getUsuario);
-
 router.get('/aprende', (req, res)=>{
-   
     cn.query('select * from contenido',(err,row,fiels)=>{
         if(!err){
             res.render('aprende', {
@@ -26,15 +23,28 @@ router.get('/aprende', (req, res)=>{
         }
     })
 });
+
 router.get('/libros', (req, res)=>{
     res.render('aprende_libros', {
         title:'aprende con libros'
-    })
-    
+    })    
 });
+
 router.get('/conocenos',(req,res,next)=>{
     res.render('conocenos',{
         title:'conocenos'
+    })
+})
+
+router.get('/registrarse',(req,res)=>{
+    res.render('registro',{
+        title:'Registrarse'
+    })
+})
+
+router.get('/empresa',(req,res)=>{
+    res.render('registros_empresa',{
+        title:'Contacto para empresas'
     })
 })
 

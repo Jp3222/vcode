@@ -2,10 +2,10 @@
 
 <div class="row align-content-center justify-content-center vh-100">
     
-    <div class="col-auto border rounded p-1">
+    <div class="col-auto rounded p-1" style="border:1px solid black;">
         <h1 style="text-align: center;">Inicio de sesion</h1>
-        <div class="col-auto border rounded p-1">
-            <form action="log" style="height: 300px; width: 300px;">
+        <div class="col-auto rounded p-1" style="border:1px solid black;">
+            <form action="log" method="post" style="height: 400px; width: 300px;">
                 <div class="form-group m-1">
                     <label for="">usuario</label>
                     <input type="text" class="form-control" id="user">
@@ -14,13 +14,31 @@
                     <label for="">contraseña</label>
                     <input type="password" class="form-control">
                 </div>
-                <center><input type="submit" class="btn btn-primary m-1" ></center>
-                <center><a href="registrarse"> Nueva Cuenta</a></center>
+                <center>
+                    <input type="submit" class="btn btn-primary m-1" >
+                
+                </center>
+                <br>
+                <center>
+                    <label for="">¿Aun no tienes cuentas?</label>
+                </center>
+                <center>
+                    <a href="registrarse"> Nueva cuenta</a>
+                </center>
+                <br>
+                <center>
+                    <label for="">Para empresas</label>
+                </center>
+                <center>
+                    <a href="empresa"> Nueva cuenta para empresas</a>
+                </center>
             </form>                
         </div>
-            
     </div>
-
+    <script>
+        const us = document.getElementById('user');
+        us.focus();
+    </script>
 </div>
 
 <%-include('partials/fooder.ejs')%>
