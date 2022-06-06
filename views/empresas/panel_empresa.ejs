@@ -1,0 +1,118 @@
+<%-include('../plantillas/headU.ejs')%>
+
+<div class="row" style="height: 100%;">
+   <div class="col-lg-4">
+       <div class="row border border-info p-1 m-1">
+        <p>
+            <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Notificaciones (<%= 5%>)
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body ">
+                <ul class="aling-items-center list-unstyled fw-normal pb-1 small ">
+                    <%for(var i = 0; i < 5; i++) {%>
+                        <li class="aling-items-center">
+                            <a href="#" class="btn btn-dark d-inline-flex align-items-center rounded">
+                                Notificacion <%=(i + 1)%>
+                            </a>
+                            <a href="" class="btn btn-danger aling-items-center">Eliminar</a>
+                        </li>
+                    <%} %>
+                </ul>
+            </div>
+        </div>
+       </div>
+   </div>
+    <div class="col-lg-8">
+        <div class="row border border-info m-1">
+            <div class="row text-center">
+                <h1>Menu</h1>
+            </div>
+
+            <div class="row">
+                
+                <div class="row p-1">
+                    <p>
+                        <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#seccion_aprende" aria-expanded="false" aria-controls="collapseExample">
+                            Para tu aprendizaje.
+                        </button>
+                    </p>
+                    <div class="collapse" id="seccion_aprende">
+                        <div class="card card-body">
+                            <ul class="list-unstyled fw-normal pb-1 small">
+                                <li>
+                                    <a href="aprende" class="btn btn-dark d-inline-flex align-items-center rounded w-100">
+                                        Ver cursos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="publicar-curso" class="btn btn-dark d-inline-flex align-items-center rounded w-100">
+                                        Publicar un curso
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row p-1">
+                    <p>
+                        <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#seccion_exp" aria-expanded="false" aria-controls="collapseExample">
+                            Para tu experiencia
+                        </button>
+                    </p>
+                    <div class="collapse" id="seccion_exp">
+                        <div class="card card-body">
+                            <ul class="list-unstyled fw-normal pb-1 small">
+                                <li>
+                                    <a href="aprende" class="btn btn-dark d-inline-flex align-items-center rounded w-100">
+                                        crear ofertas laborales
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="aprende" class="btn btn-dark d-inline-flex align-items-center rounded w-100">
+                                        publicar curso
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="aprende" class="btn btn-dark d-inline-flex align-items-center rounded w-100">
+                                        publicar proyecto
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row p-1">
+                    <p>
+                        <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#seccion_prac" aria-expanded="false" aria-controls="collapseExample">
+                            Para que practiques mientras aprendes
+                        </button>
+                    </p>
+                    <div class="collapse" id="seccion_prac">
+                        <div class="card card-body">
+                            <ul class="list-unstyled fw-normal pb-1 small">
+                                <li>
+                                    <a href="aprende" class="btn btn-dark d-inline-flex align-items-center rounded w-100">
+                                        apoyar proyectos libres
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="aprende" class="btn btn-dark d-inline-flex align-items-center rounded w-100">
+                                       crear proyecto libre
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%-include('../plantillas/fooder.ejs')%>

@@ -3,7 +3,7 @@ const cn = mysql.createConnection({
     host:'localhost',
     user: 'root',
     password:'12345',
-    database:'vcode'
+    database:'vcode2'
 });
 
 cn.connect((err)=>{

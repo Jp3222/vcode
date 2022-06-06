@@ -1,0 +1,68 @@
+<%-include('../plantillas/headU.ejs')%>
+
+<div class="row" style="margin-top: 100px; margin-bottom: 100px;">
+    <div class="col-lg-6">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Referencia</th>
+                <th scope="col">Descripcion</th>
+              </tr>
+            </thead>
+            <tbody>
+             <%for(var i = 0; i < data.length; i++){%>
+                <tr>
+                    <th scope="row"> <%= i+1 %> </th>
+                    <td><%=data[i].titulo%></td>
+                    <td><a href="<%=data[i].referencia%>"><%=data[i].referencia%></a></td>
+                    <td><%=data[i].des%></td>
+                </tr>
+            <%}%>
+            </tbody>
+          </table>
+    </div>
+    <div class="col-lg-4">
+        <div class="row">
+            <form action="subir-curso" method="post">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="">Titulo</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" style="width: 300px;" name="titulo">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="">Referencia</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" style="width: 300px;" name="link">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="">Descripcion</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" style="width: 300px;height: 200px;" name="des">
+                        </div>
+                    </div>
+                </div>
+                <center>
+                    <input type="submit" class="btn btn-primary m-1" >
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%-include('../plantillas/fooder.ejs')%>

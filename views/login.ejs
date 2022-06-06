@@ -1,22 +1,23 @@
 <%-include('plantillas/head.ejs')%>
 
 <div class="row align-content-center justify-content-center vh-100">
-    
     <div class="col-auto rounded p-1" style="border:1px solid black;">
         <h1 style="text-align: center;">Inicio de sesion</h1>
+        
         <div class="col-auto rounded p-1" style="border:1px solid black;">
-            <form action="login-usuario" method="post" style="height: 400px; width: 300px;">
+            <form action="buscar-usuario" method="post" style="height: 400px; width: 300px;">
                 <div class="form-group m-1">
                     <label for="">usuario</label>
                     <input type="text" class="form-control" name="user" id="user">
                  </div>
-                <div class="form-group m-1">
+                
+                 <div class="form-group m-1">
                     <label for="">contraseña</label>
                     <input type="password" class="form-control" name="pass">
                 </div>
+
                 <center>
-                    <input type="submit" class="btn btn-primary m-1" >
-                
+                    <input type="submit" class="btn btn-primary m-1" >        
                 </center>
                 <br>
                 <center>
@@ -34,6 +35,7 @@
                 </center>
             </form>                
         </div>
+
     </div>
     <script>
         const us = document.getElementById('user');
