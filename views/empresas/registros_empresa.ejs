@@ -18,25 +18,28 @@
                 <a href="acuerdo">Terminos, condiciones y mas</a>
             </div>
         </div>
+        <script>
+            
+        </script>
         <div class="col-lg-4">
             <div class="col-auto border rounded p-1">
                 <h1 style="text-align: center;">Contacto</h1>
                     <div class="col-auto border rounded p-1">
-                        <form action="panel-usuario" style="height: 300px; width: 300px;">
+                        <form action="registrar-empresa" style="height: 300px; width: 300px;" method="post">
                             <div class="form-group m-1">
                                 <label for="">Nombre de la empresa</label>
-                                <input type="email" class="form-control" id="nombre">
+                                <input type="text" class="form-control" id="nombre" name="nombre">
                              </div>
             
                             <div class="form-group m-1">
                                 <label for="">correo electronico</label>
-                                <input type="password" class="form-control">
+                                <input type="email" class="form-control" name="correo">
                             </div>
                             <div class="form-group m-1">
                                 <label for="">Titutar</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="titular">
                             </div>
-                            <center><input type="submit" class="btn btn-primary m-1" ></center>
+                            <center><input type="submit" class="btn btn-primary m-1"></center>
                         </form>                 
                     </div>
         </div>

@@ -1,0 +1,27 @@
+<%-include('../plantillas/headU.ejs')%>
+
+<div class="row">
+    <div class="col-2">
+        <h1>
+            <a href="aprende" class="btn">
+                Videos
+            </a>
+        </h1>
+    </div>
+</div>
+
+<% for(var i = 0; i < data.length; i++){ %>
+    <div class="row m-1 p-1">
+        <div class="col-lg-6">
+            <iframe width="560" height="315" src="<%=data[i].referencia%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="col-lg-6">
+            <h1><%=data[i].titulo %></h1>
+            <p><%=data[i].des%></p>
+        </div>
+    </div>    
+<%}%>
+
+
+
+<%-include('../plantillas/fooder.ejs')%>
