@@ -1,0 +1,58 @@
+<%-include('../plantillas/headU.ejs')%>
+<div class="container">
+    <div class="row">
+        
+        <div class="row">
+            <form action="publicar-ofertas-laborales" method="post">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="">Titulo</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <input class="form-control w-100" type="text" style="width: 300px;" name="titulo">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="">Descripcion</label>
+                        </div>
+                        <div class="col-lg-6">
+                            <textarea class="form-control w-100" id="exampleFormControlTextarea1" rows="3" name="des"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <center>
+                    <input type="submit" class="btn btn-primary m-1" >
+                </center>
+            </form>
+        </div>
+
+        <div class="row">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Descripcion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <%for(var i = 0; i < data.length; i++){%>
+                        <tr>
+                            <th scope="row"> <%=(i+1)%> </th>
+                            <td><%=data[i].titulo%></td>
+                            <td><%=data[i].des%></td>
+                            <td><a href="eliminar-oferta-laboral/<%=data[i].id%>" class="btn btn-danger">Eliminar</a></td>
+                            
+                        </tr>
+                    <%}%>
+                </tbody>
+              </table>
+        </div>
+        
+    </div>
+</div>
+<%-include('../plantillas/fooder.ejs')%>

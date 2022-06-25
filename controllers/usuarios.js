@@ -98,10 +98,9 @@ const getPublicarCursoE = (req,res) => {
 }
 
 const getProyectos = (req,res) => {
-    q = 'select * from proyectos where usuario = ?'
+    q = 'select * from proyectosE where usuario = ?'
     cn.query(q,[id_usuario],(err,row,fil)=>{
         if (!err) {
-            console.log(row)
             res.render('formularios/subir_proyecto_e',{
                 title:'subir proyecto',
                 data: row
@@ -116,7 +115,7 @@ const postProyectos=(req, res) => {
     q = 'select nombre from usuarios where id=?'
     cn.query(q,[id_usuario],(err,row,fil)=>{
         const user = row[0].nombre
-        q2 ='insert into proyectos(titulo,des,usuario,jefe,col,git) values(?,?,?,?,?,?)' 
+        q2 ='insert into proyectosE(titulo,des,usuario,jefe,col,git) values(?,?,?,?,?,?)' 
         col = 'na'
         datos = [titulo,des,id_usuario,user,col,rep]
         cn.query(q2,datos, (err2,row2,fil2) => {
@@ -128,6 +127,121 @@ const postProyectos=(req, res) => {
         })
     })
 }
+const postEliminarProyectos=(req, res) => {
+    const { id } = req.param
+    q = 'delete proyectosE where id = ?'
+    cn.query(q,[id],(err,row,fil)=>{
+            if(!err){
+                res.redirect('/publicar-proyecto-e')
+            }else{
+                console.log(err)
+                res.redirect('/publicar-proyecto-e')
+                
+            }
+    })
+}
+
+const getProyectosU = (req,res) => {
+    q = 'select * from proyectos where usuario = ?'
+    cn.query(q,[id_usuario],(err,row,fil)=>{
+        if (!err) {
+            res.render('formularios/subir_proyecto',{
+                title:'subir proyecto',
+                data: row
+            })
+        }else{
+            console.log(err)
+        }
+    })
+}
+const postProyectosU=(req, res) => {
+    const {titulo, rep, des} = req.body
+    q = 'select nombre from usuarios where id=?'
+    cn.query(q,[id_usuario],(err,row,fil)=>{
+        const user = row[0].nombre
+        q2 ='insert into proyectos(titulo,des,usuario,jefe,col,git) values(?,?,?,?,?,?)' 
+        col = 'na'
+        datos = [titulo,des,id_usuario,user,col,rep]
+        cn.query(q2,datos, (err2,row2,fil2) => {
+            if(!err2){
+                res.redirect('/publicar-proyecto')
+            }else{
+                console.log(err2)
+            }
+        })
+    })
+}
+const postEliminarProyectosU=(req, res) => {
+    const { id } = req.param
+    q = 'delete proyectos where id = ?'
+    cn.query(q,[id],(err,row,fil)=>{
+            if(!err){
+                res.redirect('/publicar-proyecto')
+            }else{
+                console.log(err)
+                res.redirect('/publicar-proyecto')
+                
+            }
+    })
+}
+
+const postCompartirCurso=(req,res)=>{
+    const{titulo, link, des} = req.body
+    q = 'insert into contenidoE(referencia,titulo,des,usuario) values(?,?,?,?)'
+    const items = [link,titulo,des,id_usuario]
+    cn.query(q,items,(err,row,fil)=>{
+        if(!err){
+            res.redirect('/publicar-curso-e')
+        }else{
+            console.log(err)
+            res.redirect('/publicar-curso-e')
+        }
+    })
+}
+const postCompartirCursoU=(req,res)=>{
+    const{titulo, link, des} = req.body
+    q = 'insert into peticion_contenido(referencia,titulo,des,usuario) values(?,?,?,?)'
+    const items = [link,titulo,des,id_usuario]
+    cn.query(q,items,(err,row,fil)=>{
+        if(!err){
+            res.redirect('/publicar-curso')
+        }else{
+            console.log(err)
+            res.redirect('/publicar-curso')
+        }
+    })
+}
+const getOfertas=(req, res)=>{
+    q = 'select * from ofertas where usuario=?'
+    cn.query(q,[id_usuario], (err,row,fil) => {
+         res.render('formularios/subir_oferta',{
+             title:'Ofertas Laborales',
+             data:row
+         })
+    })
+ }
+
+ const postOfertas=(req,res)=>{
+    const {titulo,des} = req.body
+    const q = 'select nombre from usuarios where id=?'
+    cn.query(q,[id_usuario],(err,row,fil)=>{
+       if(!err){
+            const nom = row[0].nombre
+            q2 = 'insert into ofertas(usuario,titulo,des,empresa) values(?,?,?,?)'
+            datos = [id_usuario,titulo,des,nom]
+            cn.query(q2,datos,(err2,row2,fil2)=>{
+                if(!err){
+                    res.redirect('/publicar-ofertas-laborales')
+                }else{
+                    res.redirect('/publicar-ofertas-laborales')
+                    console.log(err2)
+                }
+            })
+       }else{
+           console.log(err)
+       }
+    })
+}
 const usuarios = {
     getLogin,
     getEmpresa,
@@ -136,9 +250,17 @@ const usuarios = {
     getPublicarCurso,
     getPublicarCursoE,
     getProyectos,
+    getOfertas,
+    postOfertas,
+    postEliminarProyectos,
     postProyectos,
     postBuscarUsuario,
     postInsertarUsuario,
+    postCompartirCurso,
+    postCompartirCursoU,
+    getProyectosU,
+    postProyectosU,
+    postEliminarProyectosU,
     id_usuario
 }
 module.exports = usuarios;

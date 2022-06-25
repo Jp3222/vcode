@@ -1,0 +1,16 @@
+<%-include('../plantillas/head.ejs')%>
+
+<div class="row m-1 p-1">
+    <h1>Proyectos publicados</h1>
+</div>
+
+<% for(var i = 0; i < data.length; i++){%>
+    <div class="row m-1 p-1" style="background-color: blue;">
+        <h1><%=data[i].titulo%></h1>
+        <h4>Encargado: <%=data[i].jefe%></h4>
+        <h4>Repositorio: <%=data[i].git%></h4>
+        <h4>Repositorio: <%=data[i].des%></h4>
+    </div>    
+<%}%>
+
+<%-include('../plantillas/fooder.ejs')%>
